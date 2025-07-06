@@ -1,0 +1,18 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace task_list_api.Dtos
+{
+    public class TaskReqDto
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+        public bool Completed { get; set; } 
+
+        public DateTime DueDate { get; set; }
+
+        public string Priority { get; set; }
+
+        public string[] Tags { get; set; }
+    }
+}
