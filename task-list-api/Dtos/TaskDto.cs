@@ -11,14 +11,14 @@ namespace task_list_api.Dtos
 
         public bool Completed { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
         public DateTime DueDate { get; set; }
 
         public string Priority { get; set; }
 
         public string[] Tags { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
     }
 }

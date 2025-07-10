@@ -2,12 +2,13 @@
 using task_list_api.Dtos;
 using task_list_api.Models;
 using task_list_api.Services;
+using task_list_api.Utils;
 
 namespace task_list_api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class TaskController : Controller
+    [Route("api/tasks")]
+    public class TaskController : ControllerBase
     {
 
         private readonly ITaskService _taskService;
@@ -18,18 +19,27 @@ namespace task_list_api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TaskDto>> SaveTask(TaskReqDto taskSave)
+        public async Task<ActionResult<TaskDto>> SaveTask([FromBody] TaskReqDto taskSave)
         {
             TaskDto savedTask = await _taskService.SaveTask(taskSave);
             return CreatedAtAction(nameof(GetTaskById), new { id = savedTask.TaskId }, savedTask);
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks()
+        public async Task<ActionResult<PagedResult<TaskDto>>> GetTasks(int page = 1, int pageSize = 10)
         {
-            List<TaskDto> taskList = await _taskService.GetAllTasks();
-            return Ok(taskList);
+            var result = await _taskService.GetPagedTasks(page, pageSize);
+            return Ok(result);
         }
+
+
+
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks()
+        //{
+        //    List<TaskDto> taskList = await _taskService.GetAllTasks();
+        //    return Ok(taskList);
+        //}
 
 
         [HttpGet("{id}")]
@@ -43,7 +53,7 @@ namespace task_list_api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<string>> UpdateTaskById(int id, TaskReqDto taskUpdate)
+        public async Task<ActionResult<string>> UpdateTaskById(int id, [FromBody] TaskReqDto taskUpdate)
         {
 
             string taskUpdated = await _taskService.UpdateTaskById(id, taskUpdate);

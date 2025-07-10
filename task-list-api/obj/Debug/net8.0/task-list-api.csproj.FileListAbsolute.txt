@@ -276,3 +276,6 @@ D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\refint\ta
 D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\task-list-api.pdb
 D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\task-list-api.genruntimeconfig.cache
 D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\ref\task-list-api.dll
+D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\task-list-api.sourcelink.json
+D:\cursos-programacion\c#\task-list-api\task-list-api\bin\Debug\net8.0\AutoMapper.dll
+D:\cursos-programacion\c#\task-list-api\task-list-api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

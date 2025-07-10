@@ -11,7 +11,7 @@ namespace task_list_api.Models
         public int TaskId { get; set; }
 
         [Required]
-        [StringLength(50), MinLength(4)]
+        [StringLength(50)]
         public string Title { get; set; }
 
         [StringLength(150)]
@@ -21,12 +21,6 @@ namespace task_list_api.Models
         public bool Completed { get; set; } = false;
 
         [DataType(DataType.Date)]
-        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
-
-        [DataType(DataType.Date)]
-        public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
-
-        [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; }
 
         [Required]
@@ -34,5 +28,12 @@ namespace task_list_api.Models
         public string Priority { get; set; }
 
         public string[] Tags { get; set; }
+
+        // se encarga el sistema
+        [DataType(DataType.Date)]
+        public DateTime? CreatedAt { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? UpdatedAt { get; set; }
     }
 }

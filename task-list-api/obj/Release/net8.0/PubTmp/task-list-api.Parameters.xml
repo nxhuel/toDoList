@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="task-list-api20250708201828" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\cursos-programacion\\c\#\\task-list-api\\task-list-api\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

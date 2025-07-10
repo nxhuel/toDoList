@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using task_list_api.Configurations;
 using task_list_api.Context;
+using task_list_api.Mappings;
 using task_list_api.Services;
 using task_list_api.Services.Impl;
 
@@ -13,7 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 
 // Add services to the container.
 
-builder.Services.AddScoped<ITaskService, TaskServieImpl>();
+builder.Services.AddScoped<ITaskService, TaskServiceImpl>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -23,6 +25,21 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCorsPolicy();
 
 builder.Services.AddAuthentication();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// Limit API
+builder.Services.AddRateLimiter(option =>
+{
+    option.RejectionStatusCode =
+    StatusCodes.Status429TooManyRequests;
+
+    option.AddFixedWindowLimiter("fijo", opt =>
+    {
+        opt.PermitLimit = 100;
+        opt.Window = TimeSpan.FromMinutes(1);
+    });
+});
 
 var app = builder.Build();
 
@@ -38,6 +55,8 @@ else
     app.UseHsts();
 }
 
+app.UseRateLimiter();
+
 app.UseHttpsRedirection();
 
 app.UseRouting();
@@ -46,6 +65,6 @@ app.UseCors("AllowAngularApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers().RequireRateLimiting("fijo");
 
 app.Run();

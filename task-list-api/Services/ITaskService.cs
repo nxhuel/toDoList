@@ -1,4 +1,5 @@
 ﻿using task_list_api.Dtos;
+using task_list_api.Utils;
 
 namespace task_list_api.Services
 {
@@ -6,7 +7,9 @@ namespace task_list_api.Services
     {
         public Task<TaskDto> SaveTask(TaskReqDto taskReq);
 
-        public Task<List<TaskDto>> GetAllTasks();
+        Task<PagedResult<TaskDto>> GetPagedTasks(int page, int pageSize);
+
+        //public Task<List<TaskDto>> GetAllTasks();
 
         public Task<TaskDto> GetTask(int taskId);
 
