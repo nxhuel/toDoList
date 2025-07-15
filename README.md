@@ -58,9 +58,11 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 - AutoMapper
 - SQL Server
 - Swagger
+
 **Frontend**
 - HTML5, SCSS, Typescript, Angular
 - Bootstrap v5
+
 **Despliegue**
 - Azure
 - Vercel
