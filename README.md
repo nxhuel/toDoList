@@ -46,7 +46,7 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 - El usuario debe eliminar una tarea a la vez
 - El sistema agrega, edita o elimina la tarea de la DB y refresca las tareas disponibles
 ### Requerimientos No Funcionales
-- Toda la comunicación debe realizarse sobre HTTPS (TLP)
+- Toda la comunicación debe realizarse sobre HTTPS (TLS)
 - Autenticación mediante JWT
 - La respuestas de la API no deben superar un tiempo promedio de 200ms bajo carga normal
 - Hacer buen uso de DTOs para no saturar las entidades
