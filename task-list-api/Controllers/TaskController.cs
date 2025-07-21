@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using task_list_api.Dtos;
-using task_list_api.Models;
 using task_list_api.Services;
 using task_list_api.Utils;
 
@@ -26,9 +26,16 @@ namespace task_list_api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<PagedResult<TaskDto>>> GetTasks(int page = 1, int pageSize = 10)
         {
             var result = await _taskService.GetPagedTasks(page, pageSize);
+
+            if (result.TotalCount == 0)
+            {
+                return NotFound("No tasks found");
+
+            }
             return Ok(result);
         }
 

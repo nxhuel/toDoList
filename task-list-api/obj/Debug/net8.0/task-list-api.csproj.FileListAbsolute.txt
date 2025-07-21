@@ -279,4 +279,5 @@ D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\ref\task-
 D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\task-list-api.sourcelink.json
 D:\cursos-programacion\c#\task-list-api\task-list-api\bin\Debug\net8.0\AutoMapper.dll
 D:\cursos-programacion\c#\task-list-api\task-list-api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\cursos-programacion\c#\task-list-api\task-list-api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\cursos-programacion\c#\task-list-api\task-list-api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using task_list_api.Configurations;
 using task_list_api.Context;
 using task_list_api.Mappings;
+using task_list_api.Models;
 using task_list_api.Services;
 using task_list_api.Services.Impl;
 
@@ -25,6 +27,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCorsPolicy();
 
 builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
@@ -41,6 +44,10 @@ builder.Services.AddRateLimiter(option =>
     });
 });
 
+// Security config
+builder.Services.AddIdentityApiEndpoints<ApplicationUser>()
+    .AddEntityFrameworkStores<AppDbContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline - Widdleware en orden de solicitud (inversa para respuesta).
@@ -54,6 +61,8 @@ else
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+
+app.MapGroup("/identity").MapIdentityApi<IdentityUser>();
 
 app.UseRateLimiter();
 

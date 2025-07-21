@@ -8,26 +8,24 @@ namespace task_list_api.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TaskId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
-        [StringLength(150)]
-        public string? Description { get; set; }
+        public required string? Description { get; set; }
 
         [Required]
-        public bool Completed { get; set; } = false;
+        public required bool Completed { get; set; } = false;
 
         [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; }
 
         [Required]
         [RegularExpression("low|medium|high")]
-        public string Priority { get; set; }
+        public required string Priority { get; set; }
 
-        public string[] Tags { get; set; }
+        public string[]? Tags { get; set; }
 
         // se encarga el sistema
         [DataType(DataType.Date)]
@@ -35,5 +33,10 @@ namespace task_list_api.Models
 
         [DataType(DataType.Date)]
         public DateTime? UpdatedAt { get; set; }
+
+        // seguridad
+        [ForeignKey("ApplicationUser")]
+        public string? UserId { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }

@@ -339,3 +339,4 @@ D:\cursos-programacion\c#\task-list-api\task-list-test\obj\Debug\net8.0\refint\t
 D:\cursos-programacion\c#\task-list-api\task-list-test\obj\Debug\net8.0\task-list-test.pdb
 D:\cursos-programacion\c#\task-list-api\task-list-test\obj\Debug\net8.0\task-list-test.genruntimeconfig.cache
 D:\cursos-programacion\c#\task-list-api\task-list-test\obj\Debug\net8.0\ref\task-list-test.dll
+D:\cursos-programacion\c#\task-list-api\task-list-test\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
