@@ -111,8 +111,8 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 | POST   | `/identity/register`| Registrarse               |
 | POST   | `/identity/login`   | Loguearse                 |
 
-> Autenticación no requerida por ahora (puede añadirse a futuro).  
-> Todos los endpoints devuelven JSON. Para probarlos podés usar Postman o Swagger.
+> Autorización y Autenticación requerida   
+> Todos los endpoints devuelven JSON. Para probarlos podés usar Postman o Swagger
 
 ### Casos de uso
 <img width="712" height="735" alt="imagen" src="https://github.com/user-attachments/assets/50a2f97f-eb93-4e1e-9ada-682bc4fa1a3c" />
@@ -128,8 +128,7 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
     6. Conexión con el frontend: Este backend se comunica con el frontend realizado en Angular, alojado en otro repositorio. El CORS está habilitado para aceptar solicitudes del origen del frontend.
 
 ## Pendientes / Mejoras Futuras
-- Autenticación y autorización con JWT
-- Testing
+- Más intentos de Unit Testing
 - Validaciones más robustas
 
 ## Contribuciones 
