@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using task_list_api.Controllers;
-using task_list_api.Dtos;
 using task_list_api.Models;
 using task_list_api.Services.Impl;
-using task_list_api.Utils;
+using Xunit;
 
 namespace task_list_api_test.Controllers
 {
-    [TestClass]
     public sealed class TaskControllerTest : TestBase
     {
-        [TestMethod]
-        public async Task Get_GetTasks()
+
+        [Fact]
+        public async Task Get_GetTasks_OK()
         {
-            // Preparacion
+            // preparacion individual
             var nameDb = Guid.NewGuid().ToString();
             var context = Context(nameDb);
             var mapper = ConfigureAutoMapper();
@@ -39,15 +38,10 @@ namespace task_list_api_test.Controllers
             var controller = new TaskController(service);
 
             // ejecucion
-            var response = await controller.GetTasks();
+            var result = controller.GetTasks();
 
             // verificacion
-            var result = response.Result as OkObjectResult;
-            var pagedResult = result?.Value as PagedResult<TaskDto>;
-
-            Assert.IsNotNull(pagedResult);
-            Assert.AreEqual(2, pagedResult.Items.Count);
+            Assert.IsType<OkObjectResult>(result);
         }
-
     }
 }

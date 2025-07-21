@@ -490,3 +490,5 @@ D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\runt
 D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\task-list-api.dll
 D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\task-list-api.pdb
+D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\xunit.abstractions.dll
+D:\cursos-programacion\c#\task-list-api\task-list-api-test\bin\Debug\net8.0\xunit.core.dll
