@@ -9,6 +9,7 @@
     - [Requerimientos Técnicos](#requerimientos-técnicos)
 - [Diseño del Sistema](#diseño-del-sistema) 
     - [Arquitectura en Capas](#arquitectura-en-capas)
+    - [Diagrama Entidad Relación](#diagrama-entidad-relación)
     - [Prototipo](#prototipo)
     - [Endpoints Disponibles](#endpoints-disponibles)
 - [Casos de Uso](#casos-de-uso)
@@ -71,6 +72,9 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 ### Arquitectura en Capas
 <img width="747" height="334" alt="imagen" src="https://github.com/user-attachments/assets/2d784afc-6510-42dd-b076-149c0428e056" />
 
+### Diagrama Entidad Relación
+<img width="924" height="897" alt="imagen" src="https://github.com/user-attachments/assets/0eea8d5e-01ab-40f5-baae-97d2b0738bf8" />
+
 ### Prototipo
 **PR001**
 
@@ -102,8 +106,13 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 | PUT    | `/api/tasks/{id}`| Actualizar una tarea         |
 | DELETE | `/api/tasks/{id}`| Eliminar una tarea           |
 
-> Autenticación no requerida por ahora (puede añadirse a futuro).  
-> Todos los endpoints devuelven JSON. Para probarlos podés usar Postman o Swagger.
+| Método | Endpoint            | Descripción               |
+|--------|---------------------|---------------------------|
+| POST   | `/identity/register`| Registrarse               |
+| POST   | `/identity/login`   | Loguearse                 |
+
+> Autorización y Autenticación requerida   
+> Todos los endpoints devuelven JSON. Para probarlos podés usar Postman o Swagger
 
 ### Casos de uso
 <img width="712" height="735" alt="imagen" src="https://github.com/user-attachments/assets/50a2f97f-eb93-4e1e-9ada-682bc4fa1a3c" />
@@ -119,8 +128,7 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
     6. Conexión con el frontend: Este backend se comunica con el frontend realizado en Angular, alojado en otro repositorio. El CORS está habilitado para aceptar solicitudes del origen del frontend.
 
 ## Pendientes / Mejoras Futuras
-- Autenticación y autorización con JWT
-- Testing
+- Más intentos de Unit Testing
 - Validaciones más robustas
 
 ## Contribuciones 
