@@ -9,6 +9,7 @@
     - [Requerimientos Técnicos](#requerimientos-técnicos)
 - [Diseño del Sistema](#diseño-del-sistema) 
     - [Arquitectura en Capas](#arquitectura-en-capas)
+    - [Diagrama Entidad Relación](#diagrama-entidad-relación)
     - [Prototipo](#prototipo)
     - [Endpoints Disponibles](#endpoints-disponibles)
 - [Casos de Uso](#casos-de-uso)
@@ -71,6 +72,9 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 ### Arquitectura en Capas
 <img width="747" height="334" alt="imagen" src="https://github.com/user-attachments/assets/2d784afc-6510-42dd-b076-149c0428e056" />
 
+### Diagrama Entidad Relación
+<img width="924" height="897" alt="imagen" src="https://github.com/user-attachments/assets/0eea8d5e-01ab-40f5-baae-97d2b0738bf8" />
+
 ### Prototipo
 **PR001**
 
@@ -101,6 +105,11 @@ SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tarea
 | POST   | `/api/tasks`     | Crear una nueva tarea        |
 | PUT    | `/api/tasks/{id}`| Actualizar una tarea         |
 | DELETE | `/api/tasks/{id}`| Eliminar una tarea           |
+
+| Método | Endpoint            | Descripción               |
+|--------|---------------------|---------------------------|
+| POST   | `/identity/register`| Registrarse               |
+| POST   | `/identity/login`   | Loguearse                 |
 
 > Autenticación no requerida por ahora (puede añadirse a futuro).  
 > Todos los endpoints devuelven JSON. Para probarlos podés usar Postman o Swagger.
