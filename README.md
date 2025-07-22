@@ -19,6 +19,7 @@
 
 ## Descripción
 SOFTWARE de gestión de tareas. Permite crear, leer, actualizar y eliminar tareas, así como marcar su estado de completado, estado de prioridad y visualizar fechas de creación, actualización y vencimiento.
+
 ⚠️ Este repositorio solo contiene el backend. Para la parte frontend visitá: [toDoListFe (Angular)](https://github.com/nxhuel/toDoListFe).
 
 ## Análisis de Requerimientos
