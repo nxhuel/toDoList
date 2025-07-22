@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("task-list-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ef0c4f54ecf03ce8342812e11725712913f4ee8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfbcd91bc6d4a59e6201e2b21c4a63fc86442e6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("task-list-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("task-list-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
